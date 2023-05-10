@@ -12,6 +12,19 @@ header{
     padding: 20px;
     box-shadow: 5px 10px 8px #111111;
     margin-bottom: 20px;
+    display: flex;
+    color: #ffffff;
+    justify-content: space-between;
+}
+
+header h3{
+    color: #ffffff;
+    cursor: pointer;
+}
+
+header h3:hover{
+    color: #500050;
+    transition: .2s;
 }
 
 body{
@@ -34,10 +47,16 @@ body{
 }
 
 .card{
-    border-radius: 20px;
-    background: #440044;
+    border-radius: 10px;
+    background: linear-gradient(#8f018f, #da00da);
     text-align: center;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.card:hover{
+    background: linear-gradient(#500050, #380038);
+    transition: .2s;
 }
