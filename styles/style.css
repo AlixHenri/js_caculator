@@ -8,7 +8,7 @@
 }
 
 header{
-    background-color: #0f0f0f;
+    background-color: #001141;
     padding: 20px;
     box-shadow: 5px 10px 8px #111111;
     margin-bottom: 20px;
@@ -20,11 +20,6 @@ header{
 header h3{
     color: #ffffff;
     cursor: pointer;
-}
-
-header h3:hover{
-    color: #500050;
-    transition: .2s;
 }
 
 body{
@@ -40,6 +35,11 @@ body{
     margin: 10px;
 }
 
+.container h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .container .card-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -48,15 +48,14 @@ body{
 
 .card{
     border-radius: 10px;
-    background: linear-gradient(#8f018f, #da00da);
+    background: linear-gradient(122deg, rgba(0,29,108,1) 22%, rgba(0,45,156,1) 79%, rgba(51,177,255,1) 100%); 
     text-align: center;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 .card:hover{
-    background: linear-gradient(#500050, #380038);
+    background: #001141; 
     transition: .2s;
 }
