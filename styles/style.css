@@ -74,7 +74,16 @@ body{
     min-height: 1.6em;
     font-size: 3em;
     font-weight: 700;
-    
+}
+
+#screenInput{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border: 2px solid white;
+    background: transparent;
+    border-radius: 5px;
+    color: #ffffff;
 }
 
 #button-container{
@@ -97,12 +106,17 @@ body{
     background: transparent;
 }
 
-#button-container #btnEqual{
-    border: none;
+#button-container #btnClear{
     grid-column: span 2;
-    background: linear-gradient(122deg, rgba(0,29,108,1) 22%, rgba(0,45,156,1) 79%, rgba(51,177,255,1) 100%); 
 }
 
+#button-container #btnEqual{
+    grid-column: span 2;
+    background: transparent;
+    border: 2px solid #ffffff;
+}
+
+#button-container button:hover,
 #button-container #btnEqual:hover{
     background: #001141;
 }
