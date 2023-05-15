@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+    <!-- Defer = Load all html before the script.js (without this the calculator will not work properly ) -->
     <title>Js Calculator</title>
 </head>
 <body>
@@ -19,30 +21,28 @@
     <!-- Calculator Section -->
     <div class="calculator-container">
         <div class="calculator">
-            <h3>Calculadora</h3>
             <div id="operations">
-                <div id="current-operation">
-                    <input type="text" name="" id="screenInput">
-                </div>
+                <div id="previous-operation"></div>
+                <div id="current-operation"></div>
             </div>
             <div id="button-container">
-                <button id="btnClear">AC</button>
-                <button id="btnDel">DEL</button>
+                <button id="clear">AC</button>
+                <button id="delete">DEL</button>
                 <button class="number">/</button>
                 <button class="number ">7</button>
                 <button class="number">8</button>
                 <button class="number">9</button>
-                <button class="btnOperation">*</button>
+                <button class="operation">*</button>
                 <button class="number">4</button>
                 <button class="number">5</button>
                 <button class="number">6</button>
-                <button class="btnOperation">-</button>
+                <button class="operation">-</button>
                 <button class="number">1</button>
                 <button class="number">2</button>
                 <button class="number">3</button>
-                <button class="btnOperation">+</button>
+                <button class="operation">+</button>
                 <button class="number">0</button>
-                <button class="btnOperation">.</button>
+                <button class="number">.</button>
                 <button id="btnEqual">=</button>
             </div>
         </div>
