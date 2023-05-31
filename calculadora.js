@@ -446,21 +446,3 @@ function segundoGrau(equacao) {
       return '';
       }
       }
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

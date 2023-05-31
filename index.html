@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/script.js" defer></script>
-    <!-- Defer = Load all html before the script.js (without this the calculator will not work properly ) -->
     <title>Js Calculator</title>
 </head>
 <body>
@@ -21,29 +19,64 @@
     <!-- Calculator Section -->
     <div class="calculator-container">
         <div class="calculator">
+            <h3>Calculadora</h3>
             <div id="operations">
-                <div id="previous-operation"></div>
-                <div id="current-operation"></div>
+                <div id="current-operation"style="color:white;">
+                </div>
             </div>
             <div id="button-container">
-                <button id="clear">AC</button>
-                <button id="delete">DEL</button>
-                <button class="number">/</button>
-                <button class="number ">7</button>
-                <button class="number">8</button>
-                <button class="number">9</button>
-                <button class="operation">*</button>
-                <button class="number">4</button>
-                <button class="number">5</button>
-                <button class="number">6</button>
-                <button class="operation">-</button>
-                <button class="number">1</button>
-                <button class="number">2</button>
-                <button class="number">3</button>
-                <button class="operation">+</button>
-                <button class="number">0</button>
-                <button class="number">.</button>
-                <button id="btnEqual">=</button>
+                <button>CE</button>
+                <button onclick="clearDisplay()">C</button>
+                <button>DEL</button>
+
+                <button class="Basic"onclick="Sinal('/')">/</button>
+                <button class="Complex"style="display: none;"onclick="Sinal('%')">%</button>
+                <button class="Log"style="display: none;"onclick="Sinal('Log')">log</button>
+                <button class="ESG"style="display: none;"onclick="appendNumber('x^2')">x^2</button>
+                <button class="OT"style="display: none;"onclick="Sinal('Sen')">Sen</button>
+                <button class="CON"style="display: none;"onclick="Sinal('Bin')">D>B</button>
+                <button class="PIT"style="display: none;"onclick="Sinal('PIT')">+</button>
+
+                <button class="number"onclick="appendNumber('7')">7</button>
+                <button class="number"onclick="appendNumber('8')">8</button>
+                <button class="number"onclick="appendNumber('9')">9</button>
+
+                <button class="Basic" onclick="Sinal('*')">*</button>
+                <button class="Complex"style="display: none;"onclick="Sinal('y^x')">y^x</button>
+                <button class="Log"style="display: none;"onclick="Sinal('!')">!</button>
+                <button class="ESG"style="display: none;"onclick="appendNumber('x')">x</button>
+                <button class="OT"style="display: none;"onclick="Sinal('Cos')">Cos</button>
+                <button class="CON"style="display: none;"onclick="Sinal('Hex')">D>H</button>
+                <button class="PIT"style="display: none;"></button>
+
+                <button class="number"onclick="appendNumber('4')">4</button>
+                <button class="number"onclick="appendNumber('5')">5</button>
+                <button class="number"onclick="appendNumber('6')">6</button>
+
+                <button class="Basic" onclick="Sinal('-')">-</button>
+                <button class="Complex"style="display: none;"onclick="Sinal('√')">√</button>
+                <button class="Log"style="display: none;"onclick="Sinal('|')">|x|</button>
+                <button class="ESG"style="display: none;"onclick="appendNumber('-')">-</button>
+                <button class="OT"style="display: none;"onclick="Sinal('Tan')">Tan</button>
+                <button class="CON"style="display: none;"></button>
+                <button class="PIT"style="display: none;"></button>
+
+                <button class="number"onclick="appendNumber('1')">1</button>
+                <button class="number"onclick="appendNumber('2')">2</button>
+                <button class="number"onclick="appendNumber('3')">3</button>
+
+                <button class="Basic" onclick="Sinal('+')">+</button>
+                <button class="Complex"style="display: none;"onclick="Sinal('Resto')">Resto</button>
+                <button class="Log"style="display: none;"onclick="appendNumber('-')">-</button>
+                <button class="ESG"style="display: none;"onclick="appendNumber('+')">+</button>
+                <button class="OT"style="display: none;"></button>
+                <button class="CON"style="display: none;"></button>
+                <button class="PIT"style="display: none;"></button>
+
+                <button class="number"onclick="appendNumber('0')">0</button>
+                <button onclick="appendNumber('.')">.</button>
+                <button id="btnEqual"onclick="calculate()">=</button>
+                
             </div>
         </div>
     </div>
@@ -53,38 +86,38 @@
         <h2>Mais Operações</h2>
 
             <div class="card-container">
+                <div onclick="desabilitarBotao('op1')"class="card">
+                    Operações 1
+                </div>
+                <div onclick="desabilitarBotao('op2')"class="card">
+                    Operações 2
+                </div>
+                <div onclick="desabilitarBotao('op3')"class="card">
+                    Operações 3
+                </div>
                 <div class="card">
                     Integrais
                 </div>
                 <div class="card">
                     Função Polinomial
                 </div>
-                <div class="card">
-                    Logaritimo
-                </div>
-                <div class="card">
-                    Fatorial
-                </div>
-                <div class="card">
+                <div onclick="desabilitarBotao('ESG')" class="card">
                     Equação do Segundo Grau
                 </div>
-                <div class="card">
+                <div onclick="desabilitarBotao('PIT')" class="card">
                     Teorema de Pitágoras
                 </div>
-                <div class="card">
+                <div onclick="calcularPI()" class="card">
                     Calculo do PI
                 </div>
-                <div class="card">
-                    Seno
+                <div onclick="desabilitarBotao('OT')" class="card">
+                    Operações Trigonométricas
                 </div>
-                <div class="card">
-                    Cosseno
-                </div>
-                <div class="card">
-                    Tangente
+                <div onclick="desabilitarBotao('CON')" class="card">
+                    Conversão
                 </div>
             </div>
     </div>
-   
+    <script src="calculadora.js"></script>
 </body>
 </html>

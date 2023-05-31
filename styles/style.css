@@ -69,12 +69,12 @@ body{
 }
 
 #current-operation{
-    color: #fff;
     padding:  .2em;
     overflow-wrap: break-word;
     min-height: 1.6em;
     font-size: 3em;
     font-weight: 700;
+    
 }
 
 #button-container{
@@ -97,17 +97,12 @@ body{
     background: transparent;
 }
 
-#button-container #clear{
-    grid-column: span 2;
-}
-
 #button-container #btnEqual{
+    border: none;
     grid-column: span 2;
-    background: transparent;
-    border: 2px solid #ffffff;
+    background: linear-gradient(122deg, rgba(0,29,108,1) 22%, rgba(0,45,156,1) 79%, rgba(51,177,255,1) 100%); 
 }
 
-#button-container button:hover,
 #button-container #btnEqual:hover{
     background: #001141;
 }
